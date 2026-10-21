@@ -7,7 +7,7 @@
   ],
   "timezone": "browser",
   "schemaVersion": 39,
-  "version": 1,
+  "version": 2,
   "refresh": "5s",
   "time": {
     "from": "now-15m",
@@ -188,8 +188,10 @@
           "custom": {
             "lineWidth": 2,
             "fillOpacity": 8,
-            "showPoints": "never"
-          }
+            "showPoints": "never",
+            "axisLabel": "tareas en espera"
+          },
+          "min": 0
         },
         "overrides": []
       },
@@ -323,9 +325,10 @@
           "custom": {
             "lineWidth": 2,
             "fillOpacity": 8,
-            "showPoints": "never"
+            "showPoints": "never",
+            "axisLabel": "tareas/s"
           },
-          "unit": "reqps"
+          "unit": "short"
         },
         "overrides": []
       },
