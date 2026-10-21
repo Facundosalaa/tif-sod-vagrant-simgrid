@@ -1,0 +1,7 @@
+Heterogeneidad,Latencia (ms),F,p,Mejor estrategia
+H0,1,0.93,0.42139416037086463,Robo de trabajo
+H0,20,1.01,0.39294865178136146,Robo de trabajo
+H0,100,0.38,0.6902900611728229,Robo de trabajo
+H1,1,19.15,0.00018457640677098554,Robo de trabajo
+H1,20,17.48,0.0002786973934903105,Robo de trabajo
+H1,100,13.28,0.0009075733993821962,Robo de trabajo

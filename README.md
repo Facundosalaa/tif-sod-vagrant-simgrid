@@ -14,6 +14,16 @@ Integrantes: Quintana, Sofía · Salazar, Facundo · Vera, Romina.
 
 ![Arquitectura del laboratorio](docs/arquitectura.png)
 
+## Resultados en una línea
+
+Con nodos iguales las tres estrategias empatan en tiempo total; con nodos
+desiguales (misma capacidad total) el robo de trabajo termina en 38–40 s contra
+42–43 s de Menos cargado y 56–57 s de Round Robin (90 corridas reales,
+*p* < 0,001). El simulador calibrado reproduce el makespan con 1,1 % de error
+medio y el mismo orden de estrategias en las 6 condiciones; extrapolado, ubica
+el límite del coordinador centralizado en su enlace de red (~490 trabajadores),
+no en su CPU. Detalle en `analysis/analisis.ipynb` y en el informe.
+
 ## Qué hay en el repositorio
 
 | Ruta | Contenido |
@@ -84,6 +94,15 @@ agrolab simulate scale       # paso 7: 16, 64, 256 y 512 nodos
 
 Los resultados quedan en `experiments/results/` (la carpeta del proyecto está
 compartida con el anfitrión). Para un bloque solo: `agrolab run --only L20-H1`.
+Para una corrida suelta sin tocar los resultados versionados:
+`agrolab run --only L20-H1-ws-r1 --out /tmp/prueba`, y su equivalente simulado:
+`agrolab simulate one --strategy ws --hetero H1 --latency 20 --seed 1000`.
+
+Tiempos de referencia en la computadora de desarrollo (Ryzen 5 3600, Windows 10
+con Hyper-V): calibración 12 min, campaña de 90 corridas 66 min, validación
+simulada 20 s, extrapolación (270 simulaciones, hasta 512 nodos) 37 min.
+
+Los datos de la campaña se midieron con el código del tag `campania-real`.
 
 Condiciones a mano (las aplica `agrolab run` en cada bloque):
 

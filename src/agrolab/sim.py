@@ -266,6 +266,10 @@ def main(argv=None):
     ap.add_argument("mode", choices=["trivial", "one", "validate", "scale"])
     ap.add_argument("--procs", type=int, default=max(1, (os.cpu_count() or 2) - 0))
     ap.add_argument("--nodes", type=int, nargs="*", help="solo estos N (modo scale)")
+    ap.add_argument("--latencies", type=int, nargs="*", help="solo estas latencias (modo scale)")
+    ap.add_argument("--levels", nargs="*", help="solo estos niveles de heterogeneidad (modo scale)")
+    ap.add_argument("--seeds", type=int, nargs="*", help="solo estas semillas (modo scale)")
+    ap.add_argument("--tag", default="", help="sufijo del CSV de salida (modo scale)")
     ap.add_argument("--strategy", default="ws", help="modo one")
     ap.add_argument("--hetero", default="H1", help="modo one")
     ap.add_argument("--latency", type=int, default=20, help="modo one")
@@ -299,9 +303,10 @@ def main(argv=None):
     sc = params["scale"]
     base = params["workload"]["tasks_per_batch"] / len(params["cluster"]["workers"])
     nodes = args.nodes or sc["nodes"]
+    lats = args.latencies or d["latencies_ms"]
+    levels = args.levels or d["hetero"]
+    seeds = args.seeds or sc["seeds"]
     jobs = [make_job(params, cal, s, seed, h, lat, n, max(1, round(base * n)))
-            for n in nodes for lat in d["latencies_ms"] for h in d["hetero"]
-            for s in d["strategies"] for seed in sc["seeds"]]
+            for n in nodes for lat in lats for h in levels for s in d["strategies"] for seed in seeds]
     jobs.sort(key=lambda j: -j["n_workers"])  # los grandes primero, para repartir mejor
-    suffix = "" if not args.nodes else "_" + "_".join(map(str, nodes))
-    run_jobs(jobs, OUT / f"scale{suffix}.csv", args.procs)
+    run_jobs(jobs, OUT / f"scale{args.tag}.csv", args.procs)

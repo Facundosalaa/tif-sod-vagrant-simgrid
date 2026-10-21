@@ -1,8 +1,8 @@
-Plataforma: L = 155.235 ms, B = 0.5 MB/s, trabajador a 50000 u/s
-  despacho en el coordinador                              0.219 ms
-  envío de la tarea (L + (encabezado + datos) / B)      718.559 ms
-  ejecución (costo / velocidad)                         500.000 ms
-  confirmación (L + encabezado / B)                     155.579 ms
-  total calculado a mano                               1374.357 ms
-  total simulado (makespan)                            1374.357 ms
+Plataforma: L = 155.235 ms, B coordinador = 34.1 MB/s, B trabajador = 0.466 MB/s (ventana 141.2 KiB), trabajador a 50000 u/s
+  despacho en el coordinador                                          0.219 ms
+  envío de la tarea: L + (encabezado + datos) / min(B, Bw)          718.559 ms
+  ejecución: costo / velocidad                                      500.000 ms
+  confirmación: L + encabezado / min(B, Bw)                         155.579 ms
+  total calculado a mano                                           1374.357 ms
+  total simulado (makespan)                                        1374.357 ms
   diferencia relativa: 1.19e-07
