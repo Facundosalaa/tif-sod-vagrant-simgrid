@@ -1,0 +1,104 @@
+0 corridas ya hechas, 90 pendientes
+== bloque L1-H0: aplicando condiciones
+[1/90] L1-H0-rr-r1: makespan 44.68 s, espera 1.85 s, CV 0.128, robadas 0
+[2/90] L1-H0-ll-r5: makespan 40.90 s, espera 1.53 s, CV 0.127, robadas 0
+[3/90] L1-H0-rr-r3: makespan 36.29 s, espera 1.50 s, CV 0.148, robadas 0
+[4/90] L1-H0-ws-r2: makespan 37.05 s, espera 0.77 s, CV 0.045, robadas 26
+[5/90] L1-H0-ws-r4: makespan 38.24 s, espera 0.97 s, CV 0.048, robadas 17
+[6/90] L1-H0-rr-r5: makespan 39.44 s, espera 1.68 s, CV 0.140, robadas 0
+[7/90] L1-H0-ll-r3: makespan 36.36 s, espera 1.32 s, CV 0.142, robadas 0
+[8/90] L1-H0-ll-r2: makespan 37.18 s, espera 1.31 s, CV 0.203, robadas 0
+[9/90] L1-H0-rr-r4: makespan 38.27 s, espera 1.56 s, CV 0.103, robadas 0
+[10/90] L1-H0-ws-r5: makespan 37.13 s, espera 1.07 s, CV 0.045, robadas 25
+[11/90] L1-H0-ws-r1: makespan 39.08 s, espera 0.97 s, CV 0.101, robadas 25
+[12/90] L1-H0-ws-r3: makespan 35.66 s, espera 0.72 s, CV 0.050, robadas 33
+[13/90] L1-H0-ll-r4: makespan 41.32 s, espera 1.23 s, CV 0.172, robadas 0
+[14/90] L1-H0-ll-r1: makespan 41.07 s, espera 1.77 s, CV 0.134, robadas 0
+[15/90] L1-H0-rr-r2: makespan 37.17 s, espera 1.40 s, CV 0.150, robadas 0
+== bloque L1-H1: aplicando condiciones
+[16/90] L1-H1-ws-r3: makespan 36.17 s, espera 0.89 s, CV 0.114, robadas 34
+[17/90] L1-H1-ll-r4: makespan 42.56 s, espera 2.56 s, CV 0.193, robadas 0
+[18/90] L1-H1-ll-r2: makespan 38.36 s, espera 1.93 s, CV 0.151, robadas 0
+[19/90] L1-H1-rr-r3: makespan 48.53 s, espera 2.87 s, CV 0.295, robadas 0
+[20/90] L1-H1-ws-r5: makespan 37.68 s, espera 1.59 s, CV 0.017, robadas 26
+[21/90] L1-H1-ll-r1: makespan 47.55 s, espera 2.88 s, CV 0.224, robadas 0
+[22/90] L1-H1-ws-r4: makespan 37.52 s, espera 1.48 s, CV 0.045, robadas 22
+[23/90] L1-H1-ll-r3: makespan 37.08 s, espera 1.67 s, CV 0.121, robadas 0
+[24/90] L1-H1-ws-r1: makespan 40.40 s, espera 1.13 s, CV 0.089, robadas 27
+[25/90] L1-H1-rr-r5: makespan 64.89 s, espera 7.02 s, CV 0.499, robadas 0
+[26/90] L1-H1-ws-r2: makespan 37.75 s, espera 1.18 s, CV 0.062, robadas 24
+[27/90] L1-H1-rr-r2: makespan 57.45 s, espera 5.86 s, CV 0.514, robadas 0
+[28/90] L1-H1-ll-r5: makespan 47.64 s, espera 2.77 s, CV 0.256, robadas 0
+[29/90] L1-H1-rr-r1: makespan 60.49 s, espera 4.20 s, CV 0.390, robadas 0
+[30/90] L1-H1-rr-r4: makespan 50.85 s, espera 4.41 s, CV 0.337, robadas 0
+== bloque L20-H0: aplicando condiciones
+[31/90] L20-H0-rr-r4: makespan 38.38 s, espera 1.60 s, CV 0.103, robadas 0
+[32/90] L20-H0-rr-r1: makespan 44.46 s, espera 1.93 s, CV 0.124, robadas 0
+[33/90] L20-H0-ll-r3: makespan 36.49 s, espera 1.42 s, CV 0.123, robadas 0
+[34/90] L20-H0-ws-r1: makespan 38.88 s, espera 1.37 s, CV 0.080, robadas 23
+[35/90] L20-H0-rr-r3: makespan 36.43 s, espera 1.57 s, CV 0.150, robadas 0
+[36/90] L20-H0-ws-r2: makespan 37.29 s, espera 0.89 s, CV 0.091, robadas 24
+[37/90] L20-H0-ws-r5: makespan 37.12 s, espera 1.26 s, CV 0.040, robadas 26
+[38/90] L20-H0-ll-r5: makespan 40.85 s, espera 1.59 s, CV 0.125, robadas 0
+[39/90] L20-H0-ws-r3: makespan 35.81 s, espera 0.88 s, CV 0.060, robadas 33
+[40/90] L20-H0-rr-r2: makespan 37.27 s, espera 1.50 s, CV 0.151, robadas 0
+[41/90] L20-H0-ll-r4: makespan 39.06 s, espera 1.35 s, CV 0.067, robadas 0
+[42/90] L20-H0-ll-r2: makespan 37.38 s, espera 1.38 s, CV 0.202, robadas 0
+[43/90] L20-H0-ws-r4: makespan 37.57 s, espera 1.32 s, CV 0.094, robadas 23
+[44/90] L20-H0-ll-r1: makespan 40.93 s, espera 1.71 s, CV 0.019, robadas 0
+[45/90] L20-H0-rr-r5: makespan 39.48 s, espera 1.78 s, CV 0.142, robadas 0
+== bloque L20-H1: aplicando condiciones
+[46/90] L20-H1-ws-r4: makespan 37.70 s, espera 2.05 s, CV 0.084, robadas 24
+[47/90] L20-H1-ll-r2: makespan 38.38 s, espera 2.02 s, CV 0.156, robadas 0
+[48/90] L20-H1-rr-r2: makespan 57.77 s, espera 5.99 s, CV 0.517, robadas 0
+[49/90] L20-H1-ll-r4: makespan 40.90 s, espera 2.49 s, CV 0.142, robadas 0
+[50/90] L20-H1-ll-r3: makespan 35.68 s, espera 1.65 s, CV 0.068, robadas 0
+[51/90] L20-H1-rr-r4: makespan 51.17 s, espera 4.55 s, CV 0.338, robadas 0
+[52/90] L20-H1-rr-r3: makespan 48.59 s, espera 2.95 s, CV 0.298, robadas 0
+[53/90] L20-H1-ll-r1: makespan 43.92 s, espera 2.71 s, CV 0.111, robadas 0
+[54/90] L20-H1-rr-r1: makespan 60.93 s, espera 4.49 s, CV 0.380, robadas 0
+[55/90] L20-H1-rr-r5: makespan 64.96 s, espera 7.12 s, CV 0.508, robadas 0
+[56/90] L20-H1-ll-r5: makespan 51.26 s, espera 2.90 s, CV 0.309, robadas 0
+[57/90] L20-H1-ws-r3: makespan 36.36 s, espera 0.98 s, CV 0.094, robadas 36
+[58/90] L20-H1-ws-r2: makespan 36.14 s, espera 1.32 s, CV 0.077, robadas 27
+[59/90] L20-H1-ws-r1: makespan 40.50 s, espera 1.40 s, CV 0.098, robadas 32
+[60/90] L20-H1-ws-r5: makespan 37.88 s, espera 1.54 s, CV 0.054, robadas 28
+== bloque L100-H0: aplicando condiciones
+[61/90] L100-H0-ws-r5: makespan 37.65 s, espera 2.04 s, CV 0.023, robadas 22
+[62/90] L100-H0-rr-r1: makespan 45.21 s, espera 2.50 s, CV 0.124, robadas 0
+[63/90] L100-H0-rr-r3: makespan 37.25 s, espera 2.10 s, CV 0.148, robadas 0
+[64/90] L100-H0-ll-r1: makespan 39.90 s, espera 2.12 s, CV 0.021, robadas 0
+[65/90] L100-H0-ws-r1: makespan 41.42 s, espera 2.37 s, CV 0.026, robadas 35
+[66/90] L100-H0-rr-r4: makespan 39.13 s, espera 2.15 s, CV 0.106, robadas 0
+[67/90] L100-H0-ws-r2: makespan 37.50 s, espera 1.75 s, CV 0.103, robadas 29
+[68/90] L100-H0-rr-r5: makespan 40.36 s, espera 2.30 s, CV 0.143, robadas 0
+[69/90] L100-H0-ws-r3: makespan 36.64 s, espera 1.65 s, CV 0.026, robadas 37
+[70/90] L100-H0-ll-r3: makespan 37.48 s, espera 2.09 s, CV 0.154, robadas 0
+[71/90] L100-H0-ll-r5: makespan 39.74 s, espera 2.15 s, CV 0.069, robadas 0
+[72/90] L100-H0-ll-r4: makespan 39.76 s, espera 1.99 s, CV 0.094, robadas 0
+[73/90] L100-H0-ll-r2: makespan 37.37 s, espera 1.93 s, CV 0.099, robadas 0
+[74/90] L100-H0-rr-r2: makespan 37.40 s, espera 2.07 s, CV 0.149, robadas 0
+[75/90] L100-H0-ws-r4: makespan 40.15 s, espera 2.09 s, CV 0.043, robadas 20
+== bloque L100-H1: aplicando condiciones
+[76/90] L100-H1-ws-r2: makespan 39.47 s, espera 2.60 s, CV 0.108, robadas 18
+[77/90] L100-H1-rr-r5: makespan 65.99 s, espera 7.78 s, CV 0.503, robadas 0
+[78/90] L100-H1-ws-r1: makespan 44.61 s, espera 2.43 s, CV 0.109, robadas 22
+[79/90] L100-H1-ll-r1: makespan 53.38 s, espera 3.44 s, CV 0.300, robadas 0
+[80/90] L100-H1-ll-r3: makespan 37.70 s, espera 2.64 s, CV 0.118, robadas 0
+[81/90] L100-H1-ws-r5: makespan 39.81 s, espera 2.97 s, CV 0.123, robadas 32
+[82/90] L100-H1-ws-r4: makespan 38.96 s, espera 2.66 s, CV 0.077, robadas 25
+[83/90] L100-H1-ll-r2: makespan 38.18 s, espera 2.55 s, CV 0.103, robadas 0
+[84/90] L100-H1-rr-r2: makespan 58.81 s, espera 6.63 s, CV 0.518, robadas 0
+[85/90] L100-H1-ll-r4: makespan 42.09 s, espera 3.26 s, CV 0.160, robadas 0
+[86/90] L100-H1-rr-r1: makespan 62.07 s, espera 5.08 s, CV 0.401, robadas 0
+[87/90] L100-H1-rr-r3: makespan 49.12 s, espera 3.49 s, CV 0.301, robadas 0
+[88/90] L100-H1-ws-r3: makespan 37.67 s, espera 2.01 s, CV 0.080, robadas 33
+[89/90] L100-H1-rr-r4: makespan 51.42 s, espera 4.91 s, CV 0.338, robadas 0
+[90/90] L100-H1-ll-r5: makespan 43.90 s, espera 3.47 s, CV 0.208, robadas 0
+88 corridas ya hechas, 2 pendientes
+== bloque L1-H0: aplicando condiciones
+[1/2] L1-H0-ll-r3: makespan 36.41 s, espera 1.32 s, CV 0.142, robadas 0
+[2/2] L1-H0-ll-r2: makespan 37.18 s, espera 1.32 s, CV 0.205, robadas 0
+89 corridas ya hechas, 1 pendientes
+== bloque L1-H0: aplicando condiciones
+[1/1] L1-H0-rr-r4: makespan 38.20 s, espera 1.58 s, CV 0.088, robadas 0
