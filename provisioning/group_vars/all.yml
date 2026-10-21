@@ -1,0 +1,23 @@
+---
+# Variables comunes del laboratorio. Las condiciones experimentales
+# (latencia y heterogeneidad) NO viven acá: las define experiments/params.toml
+# y las aplica conditions.yml en cada bloque de corridas.
+coord_ip: 192.168.56.10
+lab_net_prefix: "192.168.56."
+
+agrolab_home: /opt/agrolab
+agrolab_user: agrolab
+
+task_port: 5555          # ROUTER del coordinador (tareas y confirmaciones)
+steal_port: 5556         # ROUTER de cada trabajador (pedidos de robo)
+worker_metrics_port: 8000
+coord_metrics_port: 8001
+
+# Velocidad por defecto de un trabajador recién aprovisionado (% de un núcleo).
+cpu_quota_default: 100
+# Período del limitador de CPU de cgroups. Con el valor por defecto (100 ms)
+# una tarea al 30 % corre 30 ms y queda congelada 70 ms; con 10 ms la
+# ejecución se reparte de forma mucho más pareja.
+cpu_quota_period: 10ms
+
+grafana_admin_password: sod2026

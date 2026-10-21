@@ -1,0 +1,90 @@
+---
+- name: Prometheus (paquete de Ubuntu)
+  ansible.builtin.apt:
+    name: prometheus
+    state: present
+
+- name: Configuración de Prometheus
+  ansible.builtin.template:
+    src: prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+    mode: "0644"
+    validate: promtool check config %s
+  notify: Reiniciar Prometheus
+
+- name: Prometheus en marcha
+  ansible.builtin.systemd_service:
+    name: prometheus
+    enabled: true
+    state: started
+
+- name: Biblioteca que necesita el módulo deb822_repository
+  ansible.builtin.apt:
+    name: python3-debian
+    state: present
+
+- name: Repositorio APT de Grafana
+  ansible.builtin.deb822_repository:
+    name: grafana
+    types: deb
+    uris: https://apt.grafana.com
+    suites: stable
+    components: main
+    signed_by: https://apt.grafana.com/gpg.key
+  register: grafana_repo
+
+- name: Grafana OSS
+  ansible.builtin.apt:
+    name: grafana
+    state: present
+    update_cache: "{{ grafana_repo.changed }}"
+
+- name: Configuración de Grafana (acceso anónimo de lectura para la demo)
+  ansible.builtin.template:
+    src: grafana.ini.j2
+    dest: /etc/grafana/grafana.ini
+    owner: root
+    group: grafana
+    mode: "0640"
+  notify: Reiniciar Grafana
+
+- name: Fuente de datos Prometheus
+  ansible.builtin.copy:
+    src: datasource.yml
+    dest: /etc/grafana/provisioning/datasources/agrolab.yml
+    owner: root
+    group: grafana
+    mode: "0640"
+  notify: Reiniciar Grafana
+
+- name: Proveedor de tableros
+  ansible.builtin.copy:
+    src: dashboards.yml
+    dest: /etc/grafana/provisioning/dashboards/agrolab.yml
+    owner: root
+    group: grafana
+    mode: "0640"
+  notify: Reiniciar Grafana
+
+- name: Directorio de tableros
+  ansible.builtin.file:
+    path: /var/lib/grafana/dashboards
+    state: directory
+    owner: grafana
+    group: grafana
+    mode: "0755"
+
+- name: Tablero AgroLab
+  ansible.builtin.copy:
+    src: agrolab-dashboard.json
+    dest: /var/lib/grafana/dashboards/agrolab.json
+    owner: grafana
+    group: grafana
+    mode: "0644"
+
+- name: Grafana en marcha
+  ansible.builtin.systemd_service:
+    name: grafana-server
+    enabled: true
+    state: started
+    daemon_reload: true

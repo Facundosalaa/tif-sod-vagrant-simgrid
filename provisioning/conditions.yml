@@ -1,0 +1,27 @@
+---
+# Aplica las condiciones de un bloque de corridas:
+#   - latencia de red con tc netem en la interfaz del laboratorio de cada nodo
+#   - velocidad de cada trabajador con CPUQuota (cgroups v2)
+#
+# Ejemplo (lo arma agrolab.runner a partir de experiments/params.toml):
+#   ansible-playbook conditions.yml -e '{"delay_ms": 20, "quotas": {"w1": 100, "w2": 50, "w3": 30}}'
+- name: Latencia de red (netem)
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Fijar retardo de salida en la interfaz del laboratorio
+      ansible.builtin.command: "/usr/local/sbin/lab-netem {{ delay_ms }}"
+      register: netem
+      changed_when: netem.stdout is search('^changed')
+
+- name: Heterogeneidad de CPU
+  hosts: workers
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Fijar CPUQuota del servicio del trabajador
+      ansible.builtin.command: "/usr/local/sbin/lab-cpuquota {{ quotas[inventory_hostname] }}"
+      register: quota
+      changed_when: quota.stdout is search('^changed')
+      when: quotas is defined and inventory_hostname in quotas

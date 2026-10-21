@@ -1,0 +1,24 @@
+---
+# El coordinador ejecuta el código directamente desde el repositorio
+# (/vagrant/src): es el nodo de control de los experimentos. Los trabajadores
+# reciben una copia por Ansible y el coordinador verifica en cada corrida que
+# ambos tengan la misma versión (hash del paquete).
+- name: SimGrid con interfaz Python (S4U) y utilidades de análisis
+  ansible.builtin.apt:
+    name:
+      - python3-simgrid
+      - simgrid
+      - python3-pandas
+    state: present
+    update_cache: true
+    cache_valid_time: 86400
+
+- name: Comando agrolab para el usuario vagrant
+  ansible.builtin.copy:
+    dest: /usr/local/bin/agrolab
+    mode: "0755"
+    content: |
+      #!/bin/sh
+      # Atajo: agrolab <subcomando> ...  (ver python3 -m agrolab --help)
+      export PYTHONPATH=/vagrant/src
+      exec python3 -m agrolab "$@"

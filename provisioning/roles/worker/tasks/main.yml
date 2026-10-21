@@ -1,0 +1,44 @@
+---
+- name: Usuario de servicio
+  ansible.builtin.user:
+    name: "{{ agrolab_user }}"
+    system: true
+    shell: /usr/sbin/nologin
+    create_home: false
+
+- name: Directorio de AgroLab
+  ansible.builtin.file:
+    path: "{{ agrolab_home }}/agrolab"
+    state: directory
+    mode: "0755"
+
+# Solo los .py: los __pycache__ que Python escribe al correr en el
+# coordinador harían que cada ejecución del playbook "cambie" algo.
+- name: Código de AgroLab (mismo paquete en coordinador y trabajadores)
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ agrolab_home }}/agrolab/"
+    mode: "0644"
+  loop: "{{ query('ansible.builtin.fileglob', playbook_dir ~ '/../src/agrolab/*.py') | sort }}"
+  loop_control:
+    label: "{{ item | basename }}"
+  notify: Reiniciar trabajador
+
+- name: Sin bytecode copiado de otras máquinas
+  ansible.builtin.file:
+    path: "{{ agrolab_home }}/agrolab/__pycache__"
+    state: absent
+
+- name: Unidad systemd del trabajador
+  ansible.builtin.template:
+    src: agrolab-worker.service.j2
+    dest: /etc/systemd/system/agrolab-worker.service
+    mode: "0644"
+  notify: Reiniciar trabajador
+
+- name: Trabajador habilitado y en marcha
+  ansible.builtin.systemd_service:
+    name: agrolab-worker
+    enabled: true
+    state: started
+    daemon_reload: true

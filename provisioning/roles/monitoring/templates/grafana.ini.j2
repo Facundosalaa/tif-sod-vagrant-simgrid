@@ -1,0 +1,22 @@
+# Generado por Ansible (rol monitoring).
+[server]
+http_port = 3000
+
+[security]
+admin_user = admin
+admin_password = {{ grafana_admin_password }}
+
+[auth.anonymous]
+enabled = true
+org_role = Viewer
+
+[analytics]
+reporting_enabled = false
+check_for_updates = false
+check_for_plugin_updates = false
+
+[dashboards]
+default_home_dashboard_path = /var/lib/grafana/dashboards/agrolab.json
+
+[news]
+news_feed_enabled = false

@@ -1,0 +1,7 @@
+.vagrant/
+provisioning/inventory.ini
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.log
+.playwright-mcp/

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" width="1600" height="1040" font-family="IBM Plex Sans, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f2a24"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b5532a"/>
+    </marker>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7a72"/>
+    </marker>
+    <style>
+      .t { fill: #1f2a24; }
+      .h { font-size: 26px; font-weight: 600; }
+      .s { font-size: 19px; }
+      .xs { font-size: 16px; fill: #4a5650; }
+      .mono { font-family: IBM Plex Mono, Consolas, monospace; font-size: 16px; fill: #4a5650; }
+      .vm { fill: #ffffff; stroke: #1f2a24; stroke-width: 2; }
+      .comp { fill: #eef3ef; stroke: #9fb3a7; stroke-width: 1.2; }
+      .tag { fill: #b5532a; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1040" fill="#f7f6f2"/>
+
+  <!-- Anfitrión -->
+  <rect x="24" y="24" width="1552" height="992" rx="4" fill="none" stroke="#1f2a24" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="48" y="64" class="t h">Anfitrión: Windows 10 · VirtualBox 7.2 · Vagrant 2.4.9</text>
+  <text x="48" y="92" class="xs">vagrant up crea las 4 VM desde la box bento/ubuntu-24.04 (clones enlazados) y lanza Ansible dentro del coordinador</text>
+
+  <!-- Navegador del anfitrión -->
+  <rect x="1236" y="44" width="316" height="86" rx="4" class="comp"/>
+  <text x="1256" y="80" class="t s" font-weight="600">Navegador del anfitrión</text>
+  <text x="1256" y="108" class="mono">http://192.168.56.10:3000</text>
+
+  <!-- Coordinador -->
+  <rect x="430" y="140" width="740" height="330" rx="4" class="vm"/>
+  <text x="454" y="180" class="t h">coord · 192.168.56.10</text>
+  <text x="454" y="206" class="xs">1 vCPU · 1536 MB · nodo de control</text>
+
+  <rect x="454" y="226" width="336" height="112" rx="4" class="comp"/>
+  <text x="472" y="256" class="t s" font-weight="600">Coordinador AgroLab</text>
+  <text x="472" y="282" class="xs">genera los lotes · aplica la estrategia</text>
+  <text x="472" y="304" class="xs">recibe confirmaciones · mide</text>
+  <text x="472" y="326" class="mono">ZeroMQ ROUTER :5555</text>
+
+  <rect x="808" y="226" width="338" height="112" rx="4" class="comp"/>
+  <text x="826" y="256" class="t s" font-weight="600">SimGrid 3.35 (S4U Python)</text>
+  <text x="826" y="282" class="xs">mismos módulos de estrategia y carga</text>
+  <text x="826" y="304" class="xs">plataforma XML calibrada</text>
+  <text x="826" y="326" class="mono">agrolab simulate</text>
+
+  <rect x="454" y="352" width="220" height="100" rx="4" class="comp"/>
+  <text x="472" y="382" class="t s" font-weight="600">Ansible</text>
+  <text x="472" y="408" class="xs">site.yml · conditions.yml</text>
+  <text x="472" y="430" class="mono">ansible_local</text>
+
+  <rect x="688" y="352" width="220" height="100" rx="4" class="comp"/>
+  <text x="706" y="382" class="t s" font-weight="600">Prometheus</text>
+  <text x="706" y="408" class="xs">raspado cada 2 s</text>
+  <text x="706" y="430" class="mono">:9090</text>
+
+  <rect x="922" y="352" width="224" height="100" rx="4" class="comp"/>
+  <text x="940" y="382" class="t s" font-weight="600">Grafana</text>
+  <text x="940" y="408" class="xs">tablero AgroLab</text>
+  <text x="940" y="430" class="mono">:3000</text>
+
+  <!-- netem del coordinador -->
+  <rect x="1060" y="452" width="108" height="34" rx="4" class="tag"/>
+  <text x="1114" y="475" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">netem eth1</text>
+
+  <!-- Red privada -->
+  <line x1="60" y1="560" x2="1540" y2="560" stroke="#1f2a24" stroke-width="6"/>
+  <text x="60" y="545" class="t s" font-weight="600">Red privada host-only 192.168.56.0/24</text>
+  <text x="1540" y="545" class="xs" text-anchor="end">retardo de salida en cada nodo: 1 / 20 / 100 ms (tc netem)</text>
+  <line x1="800" y1="470" x2="800" y2="560" stroke="#1f2a24" stroke-width="3"/>
+
+  <!-- Navegador -> Grafana -->
+  <path d="M1394,130 L1394,300 L1180,300 L1180,400 L1150,400" fill="none" stroke="#6b7a72" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#m)"/>
+
+  <!-- Trabajadores -->
+  <g>
+    <rect x="70" y="680" width="440" height="300" rx="4" class="vm"/>
+    <text x="94" y="720" class="t h">w1 · 192.168.56.11</text>
+    <text x="94" y="746" class="xs">1 vCPU · 640 MB · "equipo nuevo"</text>
+    <rect x="94" y="766" width="392" height="120" rx="4" class="comp"/>
+    <text x="112" y="796" class="t s" font-weight="600">agrolab-worker (systemd)</text>
+    <text x="112" y="822" class="xs">cola FIFO local · ejecutor · servidor de robo</text>
+    <text x="112" y="846" class="mono">DEALER → :5555 · ROUTER :5556</text>
+    <text x="112" y="870" class="mono">CPUQuota  H0 60 %  ·  H1 100 %</text>
+    <rect x="94" y="900" width="190" height="60" rx="4" class="comp"/>
+    <text x="110" y="928" class="t s">node_exporter</text>
+    <text x="110" y="950" class="mono">:9100 · app :8000</text>
+    <rect x="394" y="946" width="108" height="34" rx="4" class="tag"/>
+    <text x="448" y="969" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">netem eth1</text>
+    <line x1="290" y1="560" x2="290" y2="680" stroke="#1f2a24" stroke-width="3"/>
+  </g>
+  <g>
+    <rect x="580" y="680" width="440" height="300" rx="4" class="vm"/>
+    <text x="604" y="720" class="t h">w2 · 192.168.56.12</text>
+    <text x="604" y="746" class="xs">1 vCPU · 512 MB · "equipo intermedio"</text>
+    <rect x="604" y="766" width="392" height="120" rx="4" class="comp"/>
+    <text x="622" y="796" class="t s" font-weight="600">agrolab-worker (systemd)</text>
+    <text x="622" y="822" class="xs">cola FIFO local · ejecutor · servidor de robo</text>
+    <text x="622" y="846" class="mono">DEALER → :5555 · ROUTER :5556</text>
+    <text x="622" y="870" class="mono">CPUQuota  H0 60 %  ·  H1 50 %</text>
+    <rect x="604" y="900" width="190" height="60" rx="4" class="comp"/>
+    <text x="620" y="928" class="t s">node_exporter</text>
+    <text x="620" y="950" class="mono">:9100 · app :8000</text>
+    <rect x="904" y="946" width="108" height="34" rx="4" class="tag"/>
+    <text x="958" y="969" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">netem eth1</text>
+    <line x1="800" y1="560" x2="800" y2="680" stroke="#1f2a24" stroke-width="3"/>
+  </g>
+  <g>
+    <rect x="1090" y="680" width="440" height="300" rx="4" class="vm"/>
+    <text x="1114" y="720" class="t h">w3 · 192.168.56.13</text>
+    <text x="1114" y="746" class="xs">1 vCPU · 512 MB · "equipo viejo"</text>
+    <rect x="1114" y="766" width="392" height="120" rx="4" class="comp"/>
+    <text x="1132" y="796" class="t s" font-weight="600">agrolab-worker (systemd)</text>
+    <text x="1132" y="822" class="xs">cola FIFO local · ejecutor · servidor de robo</text>
+    <text x="1132" y="846" class="mono">DEALER → :5555 · ROUTER :5556</text>
+    <text x="1132" y="870" class="mono">CPUQuota  H0 60 %  ·  H1 30 %</text>
+    <rect x="1114" y="900" width="190" height="60" rx="4" class="comp"/>
+    <text x="1130" y="928" class="t s">node_exporter</text>
+    <text x="1130" y="950" class="mono">:9100 · app :8000</text>
+    <rect x="1414" y="946" width="108" height="34" rx="4" class="tag"/>
+    <text x="1468" y="969" text-anchor="middle" font-size="16" fill="#fff" font-weight="600">netem eth1</text>
+    <line x1="1310" y1="560" x2="1310" y2="680" stroke="#1f2a24" stroke-width="3"/>
+  </g>
+
+  <!-- Flujos -->
+  <path d="M560,470 C545,600 425,600 400,676" fill="none" stroke="#1f2a24" stroke-width="2.5" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="508" y="606" class="t" font-size="17" font-weight="600">TASK (datos) ↓</text>
+  <text x="508" y="629" class="t" font-size="17" font-weight="600">DONE (confirmación) ↑</text>
+  <text x="508" y="651" class="xs">con cada trabajador</text>
+  <path d="M510,830 C545,800 545,800 576,830" fill="none" stroke="#b5532a" stroke-width="2.5" stroke-dasharray="7 5" marker-start="url(#g)" marker-end="url(#g)"/>
+  <path d="M1020,830 C1055,800 1055,800 1086,830" fill="none" stroke="#b5532a" stroke-width="2.5" stroke-dasharray="7 5" marker-start="url(#g)" marker-end="url(#g)"/>
+  <text x="800" y="1004" text-anchor="middle" font-size="17" font-weight="600" fill="#b5532a">⇢ STEAL / LOOT: pedidos de robo directos entre trabajadores (estrategia de robo de trabajo)</text>
+</svg>

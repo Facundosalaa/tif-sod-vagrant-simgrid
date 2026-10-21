@@ -1,0 +1,54 @@
+# Parámetros del laboratorio AgroLab: única fuente para el clúster real,
+# la simulación y el análisis. Cualquier cambio acá cambia el experimento.
+
+[cluster]
+coord = "192.168.56.10"
+workers = ["w1", "w2", "w3"]
+worker_ips = ["192.168.56.11", "192.168.56.12", "192.168.56.13"]
+task_port = 5555
+steal_port = 5556
+metrics_port = 8001
+
+[workload]
+# Un lote por período; costos en unidades de trabajo (1 u = SHA-256 de 32 KiB).
+batches = 12
+tasks_per_batch = 8
+period_s = 3.0
+heavy_fraction = 0.25     # imágenes de cultivo
+light_cost = 11000        # lecturas de sensores (media)
+heavy_cost = 88000        # imágenes (media)
+light_size = 16384        # bytes
+heavy_size = 262144       # bytes
+spread = 0.5              # cada valor se sortea uniforme en media * [1 - spread, 1 + spread]
+
+[hetero]
+# CPUQuota (% de un núcleo) de w1, w2, w3. Los dos niveles suman la misma
+# capacidad total (180 %), así que solo cambia cómo está repartida.
+H0 = [60, 60, 60]
+H1 = [100, 50, 30]
+
+[stealing]
+backoff_min_s = 0.05
+backoff_max_s = 0.4
+reply_timeout_s = 5.0
+
+[design]
+strategies = ["rr", "ll", "ws"]
+latencies_ms = [1, 20, 100]
+hetero = ["H0", "H1"]
+reps = 5
+seed_base = 1000          # repetición r usa la semilla seed_base + r (números aleatorios comunes)
+order_seed = 2026         # orden aleatorio de las corridas dentro de cada bloque
+
+[calibration]
+ref_units = 20000
+bench_reps = 5
+ping_sizes = [0, 4096, 16384, 65536, 262144]
+ping_reps = 8
+ping_idle_s = 0.6
+seed = 1                  # semilla de la corrida de calibración (no se usa en el diseño)
+
+[scale]
+# Extrapolación por simulación: la carga crece con N (tareas por lote ∝ N).
+nodes = [3, 16, 64, 256, 512]
+seeds = [1000, 1001, 1002]

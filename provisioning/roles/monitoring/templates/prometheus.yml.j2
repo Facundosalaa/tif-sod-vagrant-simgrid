@@ -1,0 +1,32 @@
+# Generado por Ansible (rol monitoring).
+global:
+  scrape_interval: 2s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: node
+    static_configs:
+      - targets:
+{% for h in groups['all'] %}
+          - "{{ hostvars[h].lab_ip }}:9100"
+{% endfor %}
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: "([^:]+):.*"
+        target_label: instance
+        replacement: "$1"
+{% for h in groups['all'] %}
+      - source_labels: [instance]
+        regex: '{{ hostvars[h].lab_ip | regex_escape }}'
+        target_label: node
+        replacement: "{{ h }}"
+{% endfor %}
+
+  - job_name: agrolab
+    static_configs:
+      - targets: ["{{ coord_ip }}:{{ coord_metrics_port }}"]
+        labels: {node: coord}
+{% for h in groups['workers'] %}
+      - targets: ["{{ hostvars[h].lab_ip }}:{{ worker_metrics_port }}"]
+        labels: {node: "{{ h }}"}
+{% endfor %}

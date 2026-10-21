@@ -1,0 +1,21 @@
+---
+# Aprovisionamiento completo del laboratorio. Es idempotente: una segunda
+# ejecución tiene que terminar con changed=0 en todos los nodos.
+- name: Base común (paquetes, /etc/hosts, código de AgroLab, node_exporter)
+  hosts: all
+  become: true
+  roles:
+    - common
+
+- name: Trabajadores
+  hosts: workers
+  become: true
+  roles:
+    - worker
+
+- name: Coordinador (SimGrid, monitoreo)
+  hosts: coordinator
+  become: true
+  roles:
+    - coordinator
+    - monitoring

@@ -1,0 +1,18 @@
+[Unit]
+Description=AgroLab - trabajador {{ inventory_hostname }}
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User={{ agrolab_user }}
+Environment=PYTHONPATH={{ agrolab_home }}
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -m agrolab.worker --name {{ inventory_hostname }} --coord {{ coord_ip }} --task-port {{ task_port }} --steal-port {{ steal_port }} --metrics-port {{ worker_metrics_port }}
+Restart=always
+RestartSec=2
+# Velocidad del "equipo": se cambia en caliente con lab-cpuquota.
+CPUQuota={{ cpu_quota_default }}%
+CPUQuotaPeriodSec={{ cpu_quota_period }}
+
+[Install]
+WantedBy=multi-user.target

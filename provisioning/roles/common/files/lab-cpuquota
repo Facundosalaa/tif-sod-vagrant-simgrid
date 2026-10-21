@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# lab-cpuquota <porcentaje>   limita el servicio agrolab-worker a ese % de un núcleo
+# lab-cpuquota show           muestra el límite vigente
+# El cambio es "runtime": no reinicia el servicio y se pierde al reiniciar la VM
+# (vuelve al valor de la unidad, cpu_quota_default).
+set -euo pipefail
+
+unit=agrolab-worker.service
+state=/run/agrolab/cpuquota
+
+if [[ "${1:-show}" == "show" ]]; then
+  systemctl show -p CPUQuotaPerSecUSec -p CPUQuotaPeriodUSec "$unit"
+  exit 0
+fi
+
+want="$1"
+if [[ -f "$state" && "$(cat "$state")" == "$want" ]]; then
+  echo "unchanged ${want}%"
+  exit 0
+fi
+systemctl set-property --runtime "$unit" "CPUQuota=${want}%"
+install -d -m 755 /run/agrolab
+echo "$want" > "$state"
+echo "changed ${want}%"

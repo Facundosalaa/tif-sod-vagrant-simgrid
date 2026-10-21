@@ -1,0 +1,36 @@
+---
+- name: Paquetes base (middleware ZeroMQ, métricas, diagnóstico de red)
+  ansible.builtin.apt:
+    name:
+      - python3-zmq
+      - python3-prometheus-client
+      - prometheus-node-exporter
+      - iperf3
+      - iputils-ping
+    state: present
+    update_cache: true
+    cache_valid_time: 86400
+
+- name: node_exporter habilitado
+  ansible.builtin.systemd_service:
+    name: prometheus-node-exporter
+    enabled: true
+    state: started
+
+- name: Nombres de los nodos del laboratorio en /etc/hosts
+  ansible.builtin.blockinfile:
+    path: /etc/hosts
+    marker: "# {mark} AGROLAB"
+    block: |
+      {% for h in groups['all'] %}
+      {{ hostvars[h].lab_ip }} {{ h }}
+      {% endfor %}
+
+- name: Scripts de condiciones experimentales
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "/usr/local/sbin/{{ item }}"
+    mode: "0755"
+  loop:
+    - lab-netem
+    - lab-cpuquota
