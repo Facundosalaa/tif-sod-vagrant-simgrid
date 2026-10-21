@@ -7,7 +7,7 @@
   ],
   "timezone": "browser",
   "schemaVersion": 39,
-  "version": 2,
+  "version": 3,
   "refresh": "5s",
   "time": {
     "from": "now-15m",
@@ -252,8 +252,8 @@
     },
     {
       "type": "timeseries",
-      "title": "CPU usada por nodo (núcleos)",
-      "description": "",
+      "title": "CPU del proceso AgroLab (núcleos)",
+      "description": "Tiempo de CPU por proceso. Se usa en lugar de node_cpu_seconds_total porque, en VMs sobre la API de Hyper-V, la contabilidad por ticks del kernel invitado pierde tiempo.",
       "datasource": {
         "type": "prometheus",
         "uid": "prom-agrolab"
@@ -267,7 +267,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (node) (rate(node_cpu_seconds_total{mode!=\"idle\"}[10s]))",
+          "expr": "rate(process_cpu_seconds_total{job=\"agrolab\"}[10s])",
           "legendFormat": "{{node}}",
           "datasource": {
             "type": "prometheus",

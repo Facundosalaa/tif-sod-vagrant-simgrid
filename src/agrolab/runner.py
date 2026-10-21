@@ -20,7 +20,7 @@ import subprocess
 import sys
 import time
 
-from . import code_hash, params as P, workload
+from . import params as P, workload
 from .coordinator import Coordinator
 from .metrics import summarize
 
@@ -127,14 +127,14 @@ def run_plan(params: dict, plan_path: pathlib.Path, out_dir: pathlib.Path, only:
             time.sleep(2)
             rtt = measure_rtt(coord, names)
             current = cond
-        started = dt.datetime.now().isoformat(timespec="seconds")
+        started = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
         t0 = time.monotonic()
         records, counters, extras = coord.run(row["run_id"], row["strategy"], int(row["seed"]), spec,
                                               workers, params["stealing"])
         summary = summarize(records, names, counters)
         out = {k: row[k] for k in PLAN_FIELDS}
         out.update({"started": started, "wall_s": round(time.monotonic() - t0, 3),
-                    "rtt_ms": round(rtt, 3), "code": code_hash()})
+                    "rtt_ms": round(rtt, 3), "code": coord.code})
         out.update(summary)
         out.update(extras)
         append_csv(runs_path, [out])

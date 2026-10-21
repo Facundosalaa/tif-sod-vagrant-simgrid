@@ -231,44 +231,64 @@ def trivial(cal):
     params = P.load()
     lat_ms = params["design"]["latencies_ms"][-1]
     speed = 50_000.0
-    net = cal["network"][str(lat_ms)]
-    L, B = net["latency_s"], net["bandwidth_Bps"]
     cost, size = 25_000, 262_144
+    _, info = plat.from_calibration(cal, "H1", lat_ms, 1)
+    L, B, Bw = info["latency_s"], info["bandwidth_Bps"], info["worker_bw_Bps"]
+    xml = plat.build_xml(cal["coord_speed"], [speed], L, B, Bw)
     spec = {"batches": 1, "tasks_per_batch": 1, "period_s": 1.0, "heavy_fraction": 1.0, "light_cost": cost,
             "heavy_cost": cost, "light_size": size, "heavy_size": size, "spread": 0.0}
-    job = {"strategy": "rr", "seed": 1, "n_workers": 1, "spec": spec,
-           "xml": plat.build_xml(cal["coord_speed"], [speed], L, B),
+    job = {"strategy": "rr", "seed": 1, "n_workers": 1, "spec": spec, "xml": xml,
            "coord_msg_cost_s": cal["coord_msg_cost_s"], "ll_per_worker_s": 0.0, "stealing": params["stealing"]}
     with cf.ProcessPoolExecutor(1, mp_context=mp.get_context("spawn"), max_tasks_per_child=1) as pool:
         res = pool.submit(simulate, job).result()
     c = cal["coord_msg_cost_s"]
+    rate = min(B, Bw)  # la ruta atraviesa el enlace del coordinador y el del trabajador
     manual = {
         "despacho en el coordinador": c,
-        "envío de la tarea (L + (encabezado + datos) / B)": L + (HDR + size) / B,
-        "ejecución (costo / velocidad)": cost / speed,
-        "confirmación (L + encabezado / B)": L + HDR / B,
+        "envío de la tarea: L + (encabezado + datos) / min(B, Bw)": L + (HDR + size) / rate,
+        "ejecución: costo / velocidad": cost / speed,
+        "confirmación: L + encabezado / min(B, Bw)": L + HDR / rate,
     }
     total = sum(manual.values())
-    print(f"Plataforma: L = {L * 1000:.3f} ms, B = {B / 1e6:.1f} MB/s, trabajador a {speed:.0f} u/s")
+    print(f"Plataforma: L = {L * 1000:.3f} ms, B coordinador = {B / 1e6:.1f} MB/s, "
+          f"B trabajador = {Bw / 1e6:.3f} MB/s (ventana {info['tcp_window_B'] / 1024:.1f} KiB), "
+          f"trabajador a {speed:.0f} u/s")
     for k, v in manual.items():
-        print(f"  {k:<50} {v * 1000:10.3f} ms")
-    print(f"  {'total calculado a mano':<50} {total * 1000:10.3f} ms")
-    print(f"  {'total simulado (makespan)':<50} {res['makespan_s'] * 1000:10.3f} ms")
+        print(f"  {k:<62} {v * 1000:10.3f} ms")
+    print(f"  {'total calculado a mano':<62} {total * 1000:10.3f} ms")
+    print(f"  {'total simulado (makespan)':<62} {res['makespan_s'] * 1000:10.3f} ms")
     print(f"  diferencia relativa: {abs(res['makespan_s'] - total) / total:.2e}")
 
 
 def main(argv=None):
     import argparse
     ap = argparse.ArgumentParser(prog="agrolab simulate")
-    ap.add_argument("mode", choices=["trivial", "validate", "scale"])
+    ap.add_argument("mode", choices=["trivial", "one", "validate", "scale"])
     ap.add_argument("--procs", type=int, default=max(1, (os.cpu_count() or 2) - 0))
     ap.add_argument("--nodes", type=int, nargs="*", help="solo estos N (modo scale)")
+    ap.add_argument("--strategy", default="ws", help="modo one")
+    ap.add_argument("--hetero", default="H1", help="modo one")
+    ap.add_argument("--latency", type=int, default=20, help="modo one")
+    ap.add_argument("--seed", type=int, default=1000, help="modo one")
+    ap.add_argument("--workers", type=int, default=3, help="modo one")
     args = ap.parse_args(argv)
     params = P.load()
     cal = load_cal()
     d = params["design"]
     if args.mode == "trivial":
         trivial(cal)
+        return
+    if args.mode == "one":
+        base = params["workload"]["tasks_per_batch"] / len(params["cluster"]["workers"])
+        job = make_job(params, cal, args.strategy, args.seed, args.hetero, args.latency, args.workers,
+                       max(1, round(base * args.workers)))
+        with cf.ProcessPoolExecutor(1, mp_context=mp.get_context("spawn"), max_tasks_per_child=1) as pool:
+            res = pool.submit(simulate, job).result()
+        print(f"Simulación {args.strategy} {args.hetero} L{args.latency} semilla {args.seed}, "
+              f"{args.workers} trabajadores:")
+        for k in ("makespan_s", "throughput_tps", "mean_wait_s", "cv_busy", "stolen_tasks", "msgs_control",
+                  "coord_util", "sim_wall_s"):
+            print(f"  {k:<16} {res[k]:.3f}" if isinstance(res[k], float) else f"  {k:<16} {res[k]}")
         return
     if args.mode == "validate":
         seeds = [d["seed_base"] + r for r in range(d["reps"])]

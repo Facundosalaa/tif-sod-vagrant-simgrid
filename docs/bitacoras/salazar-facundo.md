@@ -27,7 +27,17 @@
 - Desregistré la VM huérfana (con copia de seguridad del registro de VirtualBox).
 - Probé por separado chipset, paravirtualización y cantidad de vCPU; solo 1 vCPU arrancó siempre, así que todas las VMs quedaron con 1 vCPU y la heterogeneidad se controla con `CPUQuota`.
 
-<!-- Completar las semanas siguientes con calibración, validación y extrapolación -->
+**Calibración (21/10, paso 6)**
+- Medí la velocidad de cada VM con la tarea de referencia (unas 53 000 unidades/s sin límite; con CPUQuota 60 % da 33 000, con 50 % 28 000 y con 30 % 16 000) y el tiempo de ida de mensajes de 0 a 256 KiB con 0, 1, 20 y 100 ms de netem.
+- Verifiqué el modelo con una tarea y un nodo: el tiempo simulado coincide con la cuenta a mano (diferencia relativa del orden de 10⁻⁷).
+
+**Qué aprendí**
+- El ancho de banda "efectivo" que se mide con mucha latencia (0,47 MB/s con 100 ms) no es la capacidad de la red: es lo que rinde *una* conexión TCP con su ventana. Multiplicando rendimiento por ida y vuelta da una ventana casi constante (100 a 140 KiB) en los cuatro niveles. Si hubiera usado ese valor como capacidad de los enlaces, el simulador habría predicho que a gran escala el enlace del coordinador se satura con muy poco tráfico. Lo corregí: el enlace del coordinador tiene la capacidad medida sin netem y el de cada trabajador, el rendimiento de una conexión.
+
+**Dificultades**
+- Cambié archivos del simulador mientras corría la campaña real y la columna con el *hash* del código cambió en dos corridas, aunque el código medido era el mismo. Aparté los cambios hasta el final de la campaña y repetí esas dos corridas para que todo el conjunto de datos tenga la misma versión.
+
+<!-- Completar con validación y extrapolación -->
 
 ## Reflexión final desde el rol
 
