@@ -1,0 +1,426 @@
+﻿2026-10-21T20:48:51.5130525-03:00	$ git clone https://github.com/Facundosalaa/tif-sod-vagrant-simgrid.git
+2026-10-21T20:48:51.5814039-03:00	Cloning into 'tif-sod-vagrant-simgrid'...
+2026-10-21T20:48:53.6032507-03:00	# exit 0
+2026-10-21T20:48:53.8339832-03:00	$ vagrant up
+2026-10-21T20:48:57.5543993-03:00	Bringing machine 'w1' up with 'virtualbox' provider...
+2026-10-21T20:48:57.5641653-03:00	Bringing machine 'w2' up with 'virtualbox' provider...
+2026-10-21T20:48:57.5651416-03:00	Bringing machine 'w3' up with 'virtualbox' provider...
+2026-10-21T20:48:57.5651416-03:00	Bringing machine 'coord' up with 'virtualbox' provider...
+2026-10-21T20:48:57.9863832-03:00	==> w1: Cloning VM...
+2026-10-21T20:48:58.3888886-03:00	
+2026-10-21T20:48:58.4504089-03:00	[K==> w1: Matching MAC address for NAT networking...
+2026-10-21T20:48:59.2731408-03:00	==> w1: Setting the name of the VM: agrolab-w1
+2026-10-21T20:48:59.9135969-03:00	==> w1: Clearing any previously set network interfaces...
+2026-10-21T20:49:00.0899694-03:00	==> w1: Preparing network interfaces based on configuration...
+2026-10-21T20:49:00.0899694-03:00	    w1: Adapter 1: nat
+2026-10-21T20:49:00.0909466-03:00	    w1: Adapter 2: hostonly
+2026-10-21T20:49:00.1711452-03:00	==> w1: Forwarding ports...
+2026-10-21T20:49:00.2267581-03:00	    w1: 22 (guest) => 2222 (host) (adapter 1)
+2026-10-21T20:49:00.4273733-03:00	==> w1: Running 'pre-boot' VM customizations...
+2026-10-21T20:49:00.5617132-03:00	==> w1: Booting VM...
+2026-10-21T20:49:04.2285883-03:00	==> w1: Waiting for machine to boot. This may take a few minutes...
+2026-10-21T20:49:04.3933909-03:00	    w1: SSH address: 127.0.0.1:2222
+2026-10-21T20:49:04.3933909-03:00	    w1: SSH username: vagrant
+2026-10-21T20:49:04.3946656-03:00	    w1: SSH auth method: private key
+2026-10-21T20:49:43.8904782-03:00	    w1: 
+2026-10-21T20:49:43.8914523-03:00	    w1: Vagrant insecure key detected. Vagrant will automatically replace
+2026-10-21T20:49:43.8914523-03:00	    w1: this with a newly generated keypair for better security.
+2026-10-21T20:49:45.5948203-03:00	    w1: 
+2026-10-21T20:49:45.5948203-03:00	    w1: Inserting generated public key within guest...
+2026-10-21T20:49:46.7494044-03:00	    w1: Removing insecure key from the guest if it's present...
+2026-10-21T20:49:47.0891991-03:00	    w1: Key inserted! Disconnecting and reconnecting using new SSH key...
+2026-10-21T20:49:48.2464106-03:00	==> w1: Machine booted and ready!
+2026-10-21T20:49:48.2473872-03:00	==> w1: Checking for guest additions in VM...
+2026-10-21T20:49:48.2923705-03:00	==> w1: Setting hostname...
+2026-10-21T20:49:49.2624414-03:00	==> w1: Configuring and enabling network interfaces...
+2026-10-21T20:49:54.8613671-03:00	==> w2: Cloning VM...
+2026-10-21T20:49:55.3306825-03:00	
+2026-10-21T20:49:55.3917950-03:00	[K==> w2: Matching MAC address for NAT networking...
+2026-10-21T20:49:55.9911250-03:00	==> w2: Setting the name of the VM: agrolab-w2
+2026-10-21T20:49:56.6783948-03:00	==> w2: Fixed port collision for 22 => 2222. Now on port 2200.
+2026-10-21T20:49:56.7233142-03:00	==> w2: Clearing any previously set network interfaces...
+2026-10-21T20:49:56.9004008-03:00	==> w2: Preparing network interfaces based on configuration...
+2026-10-21T20:49:56.9004008-03:00	    w2: Adapter 1: nat
+2026-10-21T20:49:56.9004008-03:00	    w2: Adapter 2: hostonly
+2026-10-21T20:49:56.9889191-03:00	==> w2: Forwarding ports...
+2026-10-21T20:49:57.0428233-03:00	    w2: 22 (guest) => 2200 (host) (adapter 1)
+2026-10-21T20:49:57.2425653-03:00	==> w2: Running 'pre-boot' VM customizations...
+2026-10-21T20:49:57.3751796-03:00	==> w2: Booting VM...
+2026-10-21T20:50:01.0390630-03:00	==> w2: Waiting for machine to boot. This may take a few minutes...
+2026-10-21T20:50:01.1545212-03:00	    w2: SSH address: 127.0.0.1:2200
+2026-10-21T20:50:01.1545212-03:00	    w2: SSH username: vagrant
+2026-10-21T20:50:01.1545212-03:00	    w2: SSH auth method: private key
+2026-10-21T20:50:31.5181779-03:00	    w2: Warning: Connection reset. Retrying...
+2026-10-21T20:50:40.6199079-03:00	    w2: 
+2026-10-21T20:50:40.6199079-03:00	    w2: Vagrant insecure key detected. Vagrant will automatically replace
+2026-10-21T20:50:40.6199079-03:00	    w2: this with a newly generated keypair for better security.
+2026-10-21T20:50:42.2356556-03:00	    w2: 
+2026-10-21T20:50:42.2356556-03:00	    w2: Inserting generated public key within guest...
+2026-10-21T20:50:42.8764899-03:00	    w2: Removing insecure key from the guest if it's present...
+2026-10-21T20:50:43.1863898-03:00	    w2: Key inserted! Disconnecting and reconnecting using new SSH key...
+2026-10-21T20:50:44.0604747-03:00	==> w2: Machine booted and ready!
+2026-10-21T20:50:44.0614514-03:00	==> w2: Checking for guest additions in VM...
+2026-10-21T20:50:44.1083242-03:00	==> w2: Setting hostname...
+2026-10-21T20:50:45.0402426-03:00	==> w2: Configuring and enabling network interfaces...
+2026-10-21T20:50:49.7990026-03:00	==> w3: Cloning VM...
+2026-10-21T20:50:50.2046234-03:00	
+2026-10-21T20:50:50.2714983-03:00	[K==> w3: Matching MAC address for NAT networking...
+2026-10-21T20:50:50.8670472-03:00	==> w3: Setting the name of the VM: agrolab-w3
+2026-10-21T20:50:51.6227978-03:00	==> w3: Fixed port collision for 22 => 2222. Now on port 2201.
+2026-10-21T20:50:51.6663810-03:00	==> w3: Clearing any previously set network interfaces...
+2026-10-21T20:50:51.9128409-03:00	==> w3: Preparing network interfaces based on configuration...
+2026-10-21T20:50:51.9128409-03:00	    w3: Adapter 1: nat
+2026-10-21T20:50:51.9128409-03:00	    w3: Adapter 2: hostonly
+2026-10-21T20:50:52.0218673-03:00	==> w3: Forwarding ports...
+2026-10-21T20:50:52.0758518-03:00	    w3: 22 (guest) => 2201 (host) (adapter 1)
+2026-10-21T20:50:52.3051467-03:00	==> w3: Running 'pre-boot' VM customizations...
+2026-10-21T20:50:52.4367907-03:00	==> w3: Booting VM...
+2026-10-21T20:50:56.1041318-03:00	==> w3: Waiting for machine to boot. This may take a few minutes...
+2026-10-21T20:50:56.2172986-03:00	    w3: SSH address: 127.0.0.1:2201
+2026-10-21T20:50:56.2172986-03:00	    w3: SSH username: vagrant
+2026-10-21T20:50:56.2172986-03:00	    w3: SSH auth method: private key
+2026-10-21T20:51:26.5640150-03:00	    w3: Warning: Connection reset. Retrying...
+2026-10-21T20:51:35.8114131-03:00	    w3: 
+2026-10-21T20:51:35.8114131-03:00	    w3: Vagrant insecure key detected. Vagrant will automatically replace
+2026-10-21T20:51:35.8123899-03:00	    w3: this with a newly generated keypair for better security.
+2026-10-21T20:51:37.4609886-03:00	    w3: 
+2026-10-21T20:51:37.4609886-03:00	    w3: Inserting generated public key within guest...
+2026-10-21T20:51:38.0978042-03:00	    w3: Removing insecure key from the guest if it's present...
+2026-10-21T20:51:38.4127954-03:00	    w3: Key inserted! Disconnecting and reconnecting using new SSH key...
+2026-10-21T20:51:39.1348447-03:00	==> w3: Machine booted and ready!
+2026-10-21T20:51:39.1358213-03:00	==> w3: Checking for guest additions in VM...
+2026-10-21T20:51:39.1768358-03:00	==> w3: Setting hostname...
+2026-10-21T20:51:40.1494450-03:00	==> w3: Configuring and enabling network interfaces...
+2026-10-21T20:51:45.2722238-03:00	==> coord: Cloning VM...
+2026-10-21T20:51:45.9238261-03:00	
+2026-10-21T20:51:45.9907428-03:00	[K==> coord: Matching MAC address for NAT networking...
+2026-10-21T20:51:46.6015153-03:00	==> coord: Setting the name of the VM: agrolab-coord
+2026-10-21T20:51:47.3661576-03:00	==> coord: Fixed port collision for 22 => 2222. Now on port 2202.
+2026-10-21T20:51:47.6080000-03:00	==> coord: Clearing any previously set network interfaces...
+2026-10-21T20:51:47.7910949-03:00	==> coord: Preparing network interfaces based on configuration...
+2026-10-21T20:51:47.7910949-03:00	    coord: Adapter 1: nat
+2026-10-21T20:51:47.7910949-03:00	    coord: Adapter 2: hostonly
+2026-10-21T20:51:47.9000190-03:00	==> coord: Forwarding ports...
+2026-10-21T20:51:47.9544240-03:00	    coord: 22 (guest) => 2202 (host) (adapter 1)
+2026-10-21T20:51:48.2199158-03:00	==> coord: Running 'pre-boot' VM customizations...
+2026-10-21T20:51:48.3400755-03:00	==> coord: Booting VM...
+2026-10-21T20:51:52.0458798-03:00	==> coord: Waiting for machine to boot. This may take a few minutes...
+2026-10-21T20:51:52.1620934-03:00	    coord: SSH address: 127.0.0.1:2202
+2026-10-21T20:51:52.1620934-03:00	    coord: SSH username: vagrant
+2026-10-21T20:51:52.1620934-03:00	    coord: SSH auth method: private key
+2026-10-21T20:52:22.5271407-03:00	    coord: Warning: Connection reset. Retrying...
+2026-10-21T20:52:32.8520820-03:00	    coord: 
+2026-10-21T20:52:32.8520820-03:00	    coord: Vagrant insecure key detected. Vagrant will automatically replace
+2026-10-21T20:52:32.8520820-03:00	    coord: this with a newly generated keypair for better security.
+2026-10-21T20:52:34.4417524-03:00	    coord: 
+2026-10-21T20:52:34.4417524-03:00	    coord: Inserting generated public key within guest...
+2026-10-21T20:52:35.1142665-03:00	    coord: Removing insecure key from the guest if it's present...
+2026-10-21T20:52:35.4465548-03:00	    coord: Key inserted! Disconnecting and reconnecting using new SSH key...
+2026-10-21T20:52:36.0677766-03:00	==> coord: Machine booted and ready!
+2026-10-21T20:52:36.0687533-03:00	==> coord: Checking for guest additions in VM...
+2026-10-21T20:52:36.1141953-03:00	==> coord: Setting hostname...
+2026-10-21T20:52:37.0798768-03:00	==> coord: Configuring and enabling network interfaces...
+2026-10-21T20:52:41.5529592-03:00	==> coord: Mounting shared folders...
+2026-10-21T20:52:41.5529592-03:00	    coord: E:/VMs/repro/tif-sod-vagrant-simgrid => /vagrant
+2026-10-21T20:52:42.5116698-03:00	==> coord: Detected mount owner ID within mount options. (uid: 1000 guestpath: /vagrant)
+2026-10-21T20:52:42.5116698-03:00	==> coord: Detected mount group ID within mount options. (gid: 1000 guestpath: /vagrant)
+2026-10-21T20:52:42.7027906-03:00	==> coord: Running provisioner: bootstrap (shell)...
+2026-10-21T20:52:43.0311091-03:00	    coord: Running: <script temporal de Vagrant>
+2026-10-21T20:52:43.8743946-03:00	    coord: Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-21T20:52:44.3424971-03:00	    coord: Hit:2 http://us.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-21T20:52:44.4917022-03:00	    coord: Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-21T20:52:45.0149563-03:00	    coord: Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,146 kB]
+2026-10-21T20:52:45.2921995-03:00	    coord: Get:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-21T20:52:45.8435163-03:00	    coord: Get:6 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,400 kB]
+2026-10-21T20:52:46.3090205-03:00	    coord: Get:7 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-21T20:52:46.3090205-03:00	    coord: Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+2026-10-21T20:52:46.3838055-03:00	    coord: Get:9 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1,713 kB]
+2026-10-21T20:52:46.6178577-03:00	    coord: Get:10 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+2026-10-21T20:52:46.6285968-03:00	    coord: Get:11 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+2026-10-21T20:52:46.6295735-03:00	    coord: Get:12 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,222 kB]
+2026-10-21T20:52:46.7895998-03:00	    coord: Get:13 http://us.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [310 kB]
+2026-10-21T20:52:46.8335444-03:00	    coord: Get:14 http://us.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+2026-10-21T20:52:47.1122314-03:00	    coord: Get:15 http://us.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1,805 kB]
+2026-10-21T20:52:47.1669150-03:00	    coord: Get:16 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-21T20:52:47.8801752-03:00	    coord: Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+2026-10-21T20:52:47.8801752-03:00	    coord: Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [45.4 kB]
+2026-10-21T20:52:47.8867034-03:00	    coord: Get:19 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.1 kB]
+2026-10-21T20:52:47.8876808-03:00	    coord: Get:20 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+2026-10-21T20:52:48.0050143-03:00	    coord: Get:21 http://us.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-21T20:52:48.0168353-03:00	    coord: Get:22 http://us.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2026-10-21T20:52:48.0168353-03:00	    coord: Get:23 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,706 kB]
+2026-10-21T20:52:48.0599905-03:00	    coord: Get:24 http://us.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-21T20:52:48.0599905-03:00	    coord: Get:25 http://us.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+2026-10-21T20:52:48.0824491-03:00	    coord: Get:26 http://us.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [50.7 kB]
+2026-10-21T20:52:48.0824491-03:00	    coord: Get:27 http://us.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.0 kB]
+2026-10-21T20:52:48.0949217-03:00	    coord: Get:28 http://us.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2026-10-21T20:52:48.0949217-03:00	    coord: Get:29 http://us.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.6 kB]
+2026-10-21T20:52:48.1917840-03:00	    coord: Get:30 http://us.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9,172 B]
+2026-10-21T20:52:48.2031194-03:00	    coord: Get:31 http://us.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5,744 B]
+2026-10-21T20:52:48.3425194-03:00	    coord: Get:32 http://us.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+2026-10-21T20:52:48.3537747-03:00	    coord: Get:33 http://us.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [31.0 kB]
+2026-10-21T20:52:48.3641384-03:00	    coord: Get:34 http://us.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.6 kB]
+2026-10-21T20:52:48.3765036-03:00	    coord: Get:35 http://us.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+2026-10-21T20:52:48.3765036-03:00	    coord: Get:36 http://us.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [748 B]
+2026-10-21T20:52:48.3765036-03:00	    coord: Get:37 http://us.archive.ubuntu.com/ubuntu noble-backports/multiverse Translation-en [340 B]
+2026-10-21T20:52:48.3765036-03:00	    coord: Get:38 http://us.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2026-10-21T20:52:52.1503548-03:00	    coord: Fetched 12.2 MB in 6s (2,116 kB/s)
+2026-10-21T20:52:56.4067788-03:00	    coord: Reading package lists...
+2026-10-21T20:52:56.4611033-03:00	    coord: Reading package lists...
+2026-10-21T20:52:56.9530018-03:00	    coord: Building dependency tree...
+2026-10-21T20:52:57.6029967-03:00	    coord: Reading state information...
+2026-10-21T20:52:57.8809774-03:00	    coord: The following additional packages will be installed:
+2026-10-21T20:52:57.8809774-03:00	    coord:   ieee-data python3-dnspython python3-netaddr python3-resolvelib
+2026-10-21T20:52:57.8809774-03:00	    coord: Suggested packages:
+2026-10-21T20:52:57.8819546-03:00	    coord:   cowsay sshpass python3-trio python3-aioquic python3-h2 python3-httpx
+2026-10-21T20:52:57.8819546-03:00	    coord:   python3-httpcore ipython3 python-netaddr-docs
+2026-10-21T20:52:57.8829289-03:00	    coord: Recommended packages:
+2026-10-21T20:52:57.8829289-03:00	    coord:   ansible python3-argcomplete python3-kerberos python3-libcloud
+2026-10-21T20:52:57.8829289-03:00	    coord:   python3-passlib python3-selinux python3-winrm python3-xmltodict
+2026-10-21T20:52:58.1497202-03:00	    coord: The following NEW packages will be installed:
+2026-10-21T20:52:58.1506928-03:00	    coord:   ansible-core ieee-data python3-dnspython python3-netaddr python3-resolvelib
+2026-10-21T20:52:58.5334307-03:00	    coord: 0 upgraded, 5 newly installed, 0 to remove and 245 not upgraded.
+2026-10-21T20:52:58.5334307-03:00	    coord: Need to get 3,901 kB of archives.
+2026-10-21T20:52:58.5334307-03:00	    coord: After this operation, 24.3 MB of additional disk space will be used.
+2026-10-21T20:52:58.5334307-03:00	    coord: Get:1 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 python3-resolvelib all 1.0.1-1 [25.7 kB]
+2026-10-21T20:52:59.5241957-03:00	    coord: Get:2 http://us.archive.ubuntu.com/ubuntu noble/main amd64 python3-dnspython all 2.6.1-1ubuntu1 [163 kB]
+2026-10-21T20:52:59.9929969-03:00	    coord: Get:3 http://us.archive.ubuntu.com/ubuntu noble/main amd64 ieee-data all 20220827.1 [2,113 kB]
+2026-10-21T20:53:00.8135757-03:00	    coord: Get:4 http://us.archive.ubuntu.com/ubuntu noble/main amd64 python3-netaddr all 0.8.0-2ubuntu1 [319 kB]
+2026-10-21T20:53:00.8466453-03:00	    coord: Get:5 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 ansible-core all 2.16.3-0ubuntu2 [1,280 kB]
+2026-10-21T20:53:01.8992802-03:00	    coord: Fetched 3,901 kB in 3s (1,402 kB/s)
+2026-10-21T20:53:02.1231757-03:00	    coord: Selecting previously unselected package python3-resolvelib.
+2026-10-21T20:53:03.2337212-03:00	    coord: (Reading database ... 
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 5%
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 10%
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 15%
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 20%
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 25%
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 30%
+2026-10-21T20:53:03.2346948-03:00	(Reading database ... 35%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 40%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 45%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 50%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 55%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 60%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 65%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 70%
+2026-10-21T20:53:03.2356717-03:00	(Reading database ... 75%
+2026-10-21T20:53:03.2366481-03:00	(Reading database ... 80%
+2026-10-21T20:53:03.2366481-03:00	(Reading database ... 85%
+2026-10-21T20:53:03.2366481-03:00	(Reading database ... 90%
+2026-10-21T20:53:03.2366481-03:00	(Reading database ... 95%
+2026-10-21T20:53:03.2366481-03:00	(Reading database ... 100%
+2026-10-21T20:53:03.2366481-03:00	(Reading database ... 50821 files and directories currently installed.)
+2026-10-21T20:53:03.2376247-03:00	    coord: Preparing to unpack .../python3-resolvelib_1.0.1-1_all.deb ...
+2026-10-21T20:53:03.2679103-03:00	    coord: Unpacking python3-resolvelib (1.0.1-1) ...
+2026-10-21T20:53:03.5250161-03:00	    coord: Selecting previously unselected package python3-dnspython.
+2026-10-21T20:53:03.5250161-03:00	    coord: Preparing to unpack .../python3-dnspython_2.6.1-1ubuntu1_all.deb ...
+2026-10-21T20:53:03.5269690-03:00	    coord: Unpacking python3-dnspython (2.6.1-1ubuntu1) ...
+2026-10-21T20:53:04.0149523-03:00	    coord: Selecting previously unselected package ieee-data.
+2026-10-21T20:53:04.0159289-03:00	    coord: Preparing to unpack .../ieee-data_20220827.1_all.deb ...
+2026-10-21T20:53:04.0383872-03:00	    coord: Unpacking ieee-data (20220827.1) ...
+2026-10-21T20:53:04.5295740-03:00	    coord: Selecting previously unselected package python3-netaddr.
+2026-10-21T20:53:04.5295740-03:00	    coord: Preparing to unpack .../python3-netaddr_0.8.0-2ubuntu1_all.deb ...
+2026-10-21T20:53:04.5525476-03:00	    coord: Unpacking python3-netaddr (0.8.0-2ubuntu1) ...
+2026-10-21T20:53:06.7642408-03:00	    coord: Selecting previously unselected package ansible-core.
+2026-10-21T20:53:06.7652204-03:00	    coord: Preparing to unpack .../ansible-core_2.16.3-0ubuntu2_all.deb ...
+2026-10-21T20:53:06.7769367-03:00	    coord: Unpacking ansible-core (2.16.3-0ubuntu2) ...
+2026-10-21T20:53:09.8462650-03:00	    coord: Setting up python3-resolvelib (1.0.1-1) ...
+2026-10-21T20:53:10.1911454-03:00	    coord: Setting up ieee-data (20220827.1) ...
+2026-10-21T20:53:10.2678199-03:00	    coord: Setting up python3-dnspython (2.6.1-1ubuntu1) ...
+2026-10-21T20:53:10.6200617-03:00	    coord: Setting up python3-netaddr (0.8.0-2ubuntu1) ...
+2026-10-21T20:53:10.8242274-03:00	    coord: Setting up ansible-core (2.16.3-0ubuntu2) ...
+2026-10-21T20:53:12.0569866-03:00	    coord: Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-21T20:53:20.2610897-03:00	    coord: 
+2026-10-21T20:53:20.2610897-03:00	    coord: Running kernel seems to be up-to-date.
+2026-10-21T20:53:20.2610897-03:00	    coord: 
+2026-10-21T20:53:20.2610897-03:00	    coord: No services need to be restarted.
+2026-10-21T20:53:20.2610897-03:00	    coord: 
+2026-10-21T20:53:20.2620663-03:00	    coord: No containers need to be restarted.
+2026-10-21T20:53:20.2620663-03:00	    coord: 
+2026-10-21T20:53:20.2630419-03:00	    coord: No user sessions are running outdated binaries.
+2026-10-21T20:53:20.2630419-03:00	    coord: 
+2026-10-21T20:53:20.2630419-03:00	    coord: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-21T20:53:20.3862767-03:00	==> coord: Running provisioner: ansible (ansible_local)...
+2026-10-21T20:53:21.0043273-03:00	    coord: Running ansible-playbook...
+2026-10-21T20:53:22.6302519-03:00	
+2026-10-21T20:53:22.6302519-03:00	PLAY [Base común (paquetes, /etc/hosts, código de AgroLab, node_exporter)] *****
+2026-10-21T20:53:22.6624356-03:00	
+2026-10-21T20:53:22.6624356-03:00	TASK [Gathering Facts] *********************************************************
+2026-10-21T20:53:26.3015515-03:00	ok: [coord]
+2026-10-21T20:53:29.2208587-03:00	ok: [w1]
+2026-10-21T20:53:29.2859195-03:00	ok: [w3]
+2026-10-21T20:53:29.4034785-03:00	ok: [w2]
+2026-10-21T20:53:29.4469694-03:00	
+2026-10-21T20:53:29.4469694-03:00	TASK [common : Paquetes base (middleware ZeroMQ, métricas, diagnóstico de red)] ***
+2026-10-21T20:55:17.0929335-03:00	changed: [coord]
+2026-10-21T21:00:04.0045814-03:00	changed: [w1]
+2026-10-21T21:00:33.7050617-03:00	changed: [w2]
+2026-10-21T21:00:41.3360617-03:00	changed: [w3]
+2026-10-21T21:00:41.3477782-03:00	
+2026-10-21T21:00:41.3477782-03:00	TASK [common : node_exporter habilitado] ***************************************
+2026-10-21T21:00:42.0825469-03:00	ok: [coord]
+2026-10-21T21:00:44.6463950-03:00	ok: [w2]
+2026-10-21T21:00:44.6899207-03:00	ok: [w1]
+2026-10-21T21:00:44.8186608-03:00	ok: [w3]
+2026-10-21T21:00:44.8186608-03:00	
+2026-10-21T21:00:44.8186608-03:00	TASK [common : Nombres de los nodos del laboratorio en /etc/hosts] *************
+2026-10-21T21:00:45.3318571-03:00	[WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created
+2026-10-21T21:00:45.3318571-03:00	with a mode of 0700, this may cause issues when running as another user. To
+2026-10-21T21:00:45.3318571-03:00	avoid this, create the remote_tmp dir with the correct permissions manually
+2026-10-21T21:00:45.3435754-03:00	changed: [w2]
+2026-10-21T21:00:45.3767766-03:00	changed: [w1]
+2026-10-21T21:00:45.4099903-03:00	changed: [w3]
+2026-10-21T21:00:45.4203941-03:00	changed: [coord]
+2026-10-21T21:00:45.4314160-03:00	
+2026-10-21T21:00:45.4323920-03:00	TASK [common : Scripts de condiciones experimentales] **************************
+2026-10-21T21:00:46.7182861-03:00	changed: [w1] => (item=lab-netem)
+2026-10-21T21:00:46.7284069-03:00	changed: [w2] => (item=lab-netem)
+2026-10-21T21:00:46.7411029-03:00	changed: [w3] => (item=lab-netem)
+2026-10-21T21:00:46.7631057-03:00	changed: [coord] => (item=lab-netem)
+2026-10-21T21:00:47.6790371-03:00	changed: [w1] => (item=lab-cpuquota)
+2026-10-21T21:00:47.7014963-03:00	changed: [w3] => (item=lab-cpuquota)
+2026-10-21T21:00:47.7078785-03:00	changed: [w2] => (item=lab-cpuquota)
+2026-10-21T21:00:47.7195986-03:00	changed: [coord] => (item=lab-cpuquota)
+2026-10-21T21:00:47.8055901-03:00	
+2026-10-21T21:00:47.8055901-03:00	PLAY [Trabajadores] ************************************************************
+2026-10-21T21:00:47.8055901-03:00	
+2026-10-21T21:00:47.8055901-03:00	TASK [Gathering Facts] *********************************************************
+2026-10-21T21:00:50.6577503-03:00	ok: [w2]
+2026-10-21T21:00:50.7330157-03:00	ok: [w3]
+2026-10-21T21:00:50.8397780-03:00	ok: [w1]
+2026-10-21T21:00:50.8729772-03:00	
+2026-10-21T21:00:50.8729772-03:00	TASK [worker : Usuario de servicio] ********************************************
+2026-10-21T21:00:51.6387795-03:00	changed: [w1]
+2026-10-21T21:00:51.8531078-03:00	changed: [w2]
+2026-10-21T21:00:51.9716592-03:00	changed: [w3]
+2026-10-21T21:00:51.9833754-03:00	
+2026-10-21T21:00:51.9833754-03:00	TASK [worker : Directorio de AgroLab] ******************************************
+2026-10-21T21:00:52.4741151-03:00	changed: [w1]
+2026-10-21T21:00:52.4853713-03:00	changed: [w2]
+2026-10-21T21:00:52.4853713-03:00	changed: [w3]
+2026-10-21T21:00:52.4967013-03:00	
+2026-10-21T21:00:52.4967013-03:00	TASK [worker : Código de AgroLab (mismo paquete en coordinador y trabajadores)] ***
+2026-10-21T21:00:53.4561907-03:00	changed: [w3] => (item=__init__.py)
+2026-10-21T21:00:53.4678683-03:00	changed: [w2] => (item=__init__.py)
+2026-10-21T21:00:53.4903279-03:00	changed: [w1] => (item=__init__.py)
+2026-10-21T21:00:54.2134901-03:00	changed: [w3] => (item=__main__.py)
+2026-10-21T21:00:54.2252096-03:00	changed: [w2] => (item=__main__.py)
+2026-10-21T21:00:54.2476887-03:00	changed: [w1] => (item=__main__.py)
+2026-10-21T21:00:54.9819933-03:00	changed: [w1] => (item=calibrate.py)
+2026-10-21T21:00:55.0038465-03:00	changed: [w3] => (item=calibrate.py)
+2026-10-21T21:00:55.0467329-03:00	changed: [w2] => (item=calibrate.py)
+2026-10-21T21:00:55.8027070-03:00	changed: [w1] => (item=coordinator.py)
+2026-10-21T21:00:55.8027070-03:00	changed: [w3] => (item=coordinator.py)
+2026-10-21T21:00:55.8140467-03:00	changed: [w2] => (item=coordinator.py)
+2026-10-21T21:00:56.5161816-03:00	changed: [w2] => (item=kernel.py)
+2026-10-21T21:00:56.5485875-03:00	changed: [w1] => (item=kernel.py)
+2026-10-21T21:00:56.5911794-03:00	changed: [w3] => (item=kernel.py)
+2026-10-21T21:00:57.2949889-03:00	changed: [w2] => (item=metrics.py)
+2026-10-21T21:00:57.3189463-03:00	changed: [w1] => (item=metrics.py)
+2026-10-21T21:00:57.3507255-03:00	changed: [w3] => (item=metrics.py)
+2026-10-21T21:00:58.0354643-03:00	changed: [w1] => (item=params.py)
+2026-10-21T21:00:58.0579268-03:00	changed: [w2] => (item=params.py)
+2026-10-21T21:00:58.0907789-03:00	changed: [w3] => (item=params.py)
+2026-10-21T21:00:58.7955381-03:00	changed: [w1] => (item=platform.py)
+2026-10-21T21:00:58.7955381-03:00	changed: [w2] => (item=platform.py)
+2026-10-21T21:00:58.8169293-03:00	changed: [w3] => (item=platform.py)
+2026-10-21T21:00:59.5380891-03:00	changed: [w1] => (item=protocol.py)
+2026-10-21T21:00:59.6029327-03:00	changed: [w3] => (item=protocol.py)
+2026-10-21T21:00:59.6146506-03:00	changed: [w2] => (item=protocol.py)
+2026-10-21T21:01:00.2426359-03:00	changed: [w1] => (item=runner.py)
+2026-10-21T21:01:00.3295573-03:00	changed: [w3] => (item=runner.py)
+2026-10-21T21:01:00.3727368-03:00	changed: [w2] => (item=runner.py)
+2026-10-21T21:01:00.9328979-03:00	changed: [w1] => (item=sim.py)
+2026-10-21T21:01:00.9967833-03:00	changed: [w3] => (item=sim.py)
+2026-10-21T21:01:01.0405701-03:00	changed: [w2] => (item=sim.py)
+2026-10-21T21:01:01.6542984-03:00	changed: [w1] => (item=strategies.py)
+2026-10-21T21:01:01.7698462-03:00	changed: [w3] => (item=strategies.py)
+2026-10-21T21:01:01.8330011-03:00	changed: [w2] => (item=strategies.py)
+2026-10-21T21:01:02.3820083-03:00	changed: [w1] => (item=worker.py)
+2026-10-21T21:01:02.5307327-03:00	changed: [w3] => (item=worker.py)
+2026-10-21T21:01:02.5742884-03:00	changed: [w2] => (item=worker.py)
+2026-10-21T21:01:03.0242653-03:00	changed: [w1] => (item=workload.py)
+2026-10-21T21:01:03.1819799-03:00	changed: [w3] => (item=workload.py)
+2026-10-21T21:01:03.2149139-03:00	changed: [w2] => (item=workload.py)
+2026-10-21T21:01:03.2359352-03:00	
+2026-10-21T21:01:03.2369151-03:00	TASK [worker : Sin bytecode copiado de otras máquinas] *************************
+2026-10-21T21:01:03.5879379-03:00	ok: [w1]
+2026-10-21T21:01:03.5879379-03:00	ok: [w2]
+2026-10-21T21:01:03.6109257-03:00	ok: [w3]
+2026-10-21T21:01:03.6109257-03:00	
+2026-10-21T21:01:03.6109257-03:00	TASK [worker : Unidad systemd del trabajador] **********************************
+2026-10-21T21:01:04.6142821-03:00	changed: [w1]
+2026-10-21T21:01:04.6259981-03:00	changed: [w3]
+2026-10-21T21:01:04.7236504-03:00	changed: [w2]
+2026-10-21T21:01:04.7236504-03:00	
+2026-10-21T21:01:04.7236504-03:00	TASK [worker : Trabajador habilitado y en marcha] ******************************
+2026-10-21T21:01:06.2329786-03:00	changed: [w1]
+2026-10-21T21:01:06.4585082-03:00	changed: [w2]
+2026-10-21T21:01:08.1399448-03:00	changed: [w3]
+2026-10-21T21:01:08.1843759-03:00	
+2026-10-21T21:01:08.1843759-03:00	RUNNING HANDLER [worker : Reiniciar trabajador] ********************************
+2026-10-21T21:01:09.2161398-03:00	changed: [w1]
+2026-10-21T21:01:09.2699084-03:00	changed: [w2]
+2026-10-21T21:01:09.4601163-03:00	changed: [w3]
+2026-10-21T21:01:09.5246204-03:00	
+2026-10-21T21:01:09.5249149-03:00	PLAY [Coordinador (SimGrid, monitoreo)] ****************************************
+2026-10-21T21:01:09.5363398-03:00	
+2026-10-21T21:01:09.5363398-03:00	TASK [Gathering Facts] *********************************************************
+2026-10-21T21:01:10.5718320-03:00	ok: [coord]
+2026-10-21T21:01:10.5943977-03:00	
+2026-10-21T21:01:10.5943977-03:00	TASK [coordinator : SimGrid con interfaz Python (S4U) y utilidades de análisis] ***
+2026-10-21T21:04:08.1340491-03:00	changed: [coord]
+2026-10-21T21:04:08.1340491-03:00	
+2026-10-21T21:04:08.1350249-03:00	TASK [coordinator : Comando agrolab para el usuario vagrant] *******************
+2026-10-21T21:04:08.8679239-03:00	changed: [coord]
+2026-10-21T21:04:08.8802413-03:00	
+2026-10-21T21:04:08.8802413-03:00	TASK [monitoring : Prometheus (paquete de Ubuntu)] *****************************
+2026-10-21T21:04:33.9312781-03:00	changed: [coord]
+2026-10-21T21:04:33.9429961-03:00	
+2026-10-21T21:04:33.9429961-03:00	TASK [monitoring : Configuración de Prometheus] ********************************
+2026-10-21T21:04:34.8041054-03:00	changed: [coord]
+2026-10-21T21:04:34.8148455-03:00	
+2026-10-21T21:04:34.8158225-03:00	TASK [monitoring : Prometheus en marcha] ***************************************
+2026-10-21T21:04:35.3278642-03:00	ok: [coord]
+2026-10-21T21:04:35.3278642-03:00	
+2026-10-21T21:04:35.3288408-03:00	TASK [monitoring : Biblioteca que necesita el módulo deb822_repository] ********
+2026-10-21T21:04:40.8139277-03:00	changed: [coord]
+2026-10-21T21:04:40.8251861-03:00	
+2026-10-21T21:04:40.8251861-03:00	TASK [monitoring : Repositorio APT de Grafana] *********************************
+2026-10-21T21:04:42.1469877-03:00	changed: [coord]
+2026-10-21T21:04:42.1587065-03:00	
+2026-10-21T21:04:42.1587065-03:00	TASK [monitoring : Grafana OSS] ************************************************
+2026-10-21T21:07:09.9305804-03:00	changed: [coord]
+2026-10-21T21:07:09.9422992-03:00	
+2026-10-21T21:07:09.9422992-03:00	TASK [monitoring : Configuración de Grafana (acceso anónimo de lectura para la demo)] ***
+2026-10-21T21:07:10.6569834-03:00	changed: [coord]
+2026-10-21T21:07:10.6569834-03:00	
+2026-10-21T21:07:10.6569834-03:00	TASK [monitoring : Fuente de datos Prometheus] *********************************
+2026-10-21T21:07:11.1726161-03:00	changed: [coord]
+2026-10-21T21:07:11.1735895-03:00	
+2026-10-21T21:07:11.1735895-03:00	TASK [monitoring : Proveedor de tableros] **************************************
+2026-10-21T21:07:11.6748673-03:00	changed: [coord]
+2026-10-21T21:07:11.6859801-03:00	
+2026-10-21T21:07:11.6859801-03:00	TASK [monitoring : Directorio de tableros] *************************************
+2026-10-21T21:07:11.9533321-03:00	changed: [coord]
+2026-10-21T21:07:11.9650506-03:00	
+2026-10-21T21:07:11.9650506-03:00	TASK [monitoring : Tablero AgroLab] ********************************************
+2026-10-21T21:07:12.4669847-03:00	changed: [coord]
+2026-10-21T21:07:12.4669847-03:00	
+2026-10-21T21:07:12.4669847-03:00	TASK [monitoring : Grafana en marcha] ******************************************
+2026-10-21T21:07:15.5694908-03:00	changed: [coord]
+2026-10-21T21:07:15.5812086-03:00	
+2026-10-21T21:07:15.5812086-03:00	RUNNING HANDLER [monitoring : Reiniciar Prometheus] ****************************
+2026-10-21T21:07:16.4199030-03:00	changed: [coord]
+2026-10-21T21:07:16.4199030-03:00	
+2026-10-21T21:07:16.4199030-03:00	RUNNING HANDLER [monitoring : Reiniciar Grafana] *******************************
+2026-10-21T21:07:17.0394200-03:00	changed: [coord]
+2026-10-21T21:07:17.0618896-03:00	
+2026-10-21T21:07:17.0618896-03:00	PLAY RECAP *********************************************************************
+2026-10-21T21:07:17.0618896-03:00	coord                      : ok=22   changed=18   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-10-21T21:07:17.0618896-03:00	w1                         : ok=13   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-10-21T21:07:17.0618896-03:00	w2                         : ok=13   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-10-21T21:07:17.0618896-03:00	w3                         : ok=13   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-10-21T21:07:17.0628683-03:00	
+2026-10-21T21:07:17.3073572-03:00	# exit 0

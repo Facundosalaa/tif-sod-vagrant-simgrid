@@ -37,7 +37,16 @@
 **Dificultades**
 - Cambié archivos del simulador mientras corría la campaña real y la columna con el *hash* del código cambió en dos corridas, aunque el código medido era el mismo. Aparté los cambios hasta el final de la campaña y repetí esas dos corridas para que todo el conjunto de datos tenga la misma versión.
 
-<!-- Completar con validación y extrapolación -->
+**Validación y extrapolación (21/10, pasos 6 y 7)**
+- Simulé las 18 configuraciones del clúster con las mismas semillas: el makespan simulado se apartó del real un 1,1 % en promedio (máximo 6,8 %) y el orden de las estrategias fue el mismo en las 6 condiciones. La espera media se apartó hasta un 28 %: el modelo no tiene los costos de Python de cada mensaje.
+- Extrapolé de 3 a 512 trabajadores (270 simulaciones) y agregué 384, 640 y 768 para ver el codo: el límite del coordinador es su enlace de red, cerca de 490 trabajadores; su CPU nunca pasó del 16 %.
+
+**Reproducibilidad (21/10, pasos 1 y 8)**
+- Hice el ciclo `vagrant halt` / `vagrant up` / `vagrant destroy -f` y después cloné el repositorio desde GitHub en otra carpeta y lo levanté siguiendo solo el README: 18,4 minutos, sin intervención. La misma corrida de prueba dio 40,41 s contra 40,50 s de la campaña original, y 40,03 s en SimGrid.
+
+**Qué aprendí**
+- Que el simulador se puede usar para decidir (el orden de las estrategias no cambió en ninguna escala) pero no para dar números finos: la espera y el desbalance son las métricas donde más se nota lo que el modelo deja afuera.
+- Que Grafana, con el tablero refrescándose cada 5 s, llegó a ocupar casi 1 GB del coordinador en dos horas y frenó las simulaciones hasta que lo reinicié.
 
 ## Reflexión final desde el rol
 

@@ -24,6 +24,13 @@ medio y el mismo orden de estrategias en las 6 condiciones; extrapolado, ubica
 el límite del coordinador centralizado en su enlace de red (~490 trabajadores),
 no en su CPU. Detalle en `analysis/analisis.ipynb` y en el informe.
 
+## Entregables
+
+- Informe en formato APA: [`docs/informe/`](docs/informe/) (PDF y Word).
+- Video de demostración (5 min): [`docs/video/`](docs/video/).
+- Acta de roles y bitácoras: [`docs/acta-de-roles.md`](docs/acta-de-roles.md), [`docs/bitacoras/`](docs/bitacoras/).
+- Prueba de reproducibilidad en otra computadora (pendiente): [`docs/prueba-reproducibilidad.md`](docs/prueba-reproducibilidad.md).
+
 ## Qué hay en el repositorio
 
 | Ruta | Contenido |

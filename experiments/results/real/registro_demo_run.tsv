@@ -1,0 +1,5 @@
+﻿2026-10-21T21:12:09.7256521-03:00	$ vagrant ssh coord -c "agrolab run --only L20-H1-ws-r1 --out /tmp/demo"
+2026-10-21T21:12:22.1607118-03:00	0 corridas ya hechas, 1 pendientes
+2026-10-21T21:12:22.2810984-03:00	== bloque L20-H1: aplicando condiciones
+2026-10-21T21:13:14.3733759-03:00	[1/1] L20-H1-ws-r1: makespan 40.41 s, espera 1.44 s, CV 0.064, robadas 28
+2026-10-21T21:13:15.4675533-03:00	# exit 0
